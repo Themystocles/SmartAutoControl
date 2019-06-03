@@ -1,0 +1,48 @@
+﻿<br />
+@model UsuarioModel
+@{
+    Layout = "../Shared/_layoutLogin.cshtml";
+
+
+
+
+
+
+}
+<style>
+    #background {
+        background-image: url(../images/login2.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 150%;
+    }
+</style>
+
+<div class="container" style="background-color:white; opacity:0.80; border-radius:10px; padding:20px ; width:500px;">
+    <center><h3>Registrar minha conta</h3></center><br />
+    <center><h4><b>Bem vindo! faça seu login ou cadaster-se </b></h4></center>
+    <form asp-controller="Usuario" asp-action="Registrar" novalidate>
+        <div class="form-group">
+            <label for="email">Informe seu nome completo</label>
+            <input type="text" class="form-control" asp-for="Nome">
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Informe seu Email</label>
+            <input type="email" class="form-control" asp-for="Email">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Senha</label>
+            <input type="password" class="form-control" asp-for="Senha">
+            <span asp-validation-for="Senha" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Data de nascimento</label>
+            <input type="date" class="form-control" asp-for="DataNascimento">
+            <span asp-validation-for="DataNascimento" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-success">Registrar</button>
+        <button type="button" class="btn btn-block btn-primary" onclick="Javascript: window.location.href='../Usuario/Login'">Login</button>
+    </form>
+</div>

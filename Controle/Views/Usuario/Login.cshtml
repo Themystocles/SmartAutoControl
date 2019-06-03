@@ -1,0 +1,57 @@
+﻿<br />
+@model UsuarioModel
+
+
+
+<style>
+    #background {
+        background-image: url(../images/login2.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 219%;
+    }
+</style>
+<body>
+
+
+    <div class="container" style="background-color:white; opacity:0.70; border-radius:10px; padding:20px ; width:600px; padding-top:40px">
+        <center><h4><b>Bem vindo! faça seu login ou cadaster-se </b></h4></center><br />
+        @{
+            Layout = "../Shared/_layoutLogin.cshtml";
+
+
+
+            try
+            {
+                if (TempData["MensagemLoginInvalido"].ToString() != null)
+                {
+                    <div class="alert alert-danger">
+                        <strong> @TempData["MensagemLoginInvalido"]</strong>
+                    </div>
+                }
+
+
+            }
+            catch { }
+
+
+
+        }
+        <form asp-controller="Usuario" asp-action="ValidarLogin">
+            <div class="form-group">
+                <label for="email">Informe seu Email</label>
+                <input type="email" class="form-control" asp-for="Email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Senha</label>
+                <input type="password" class="form-control" asp-for="Senha">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox">Me lembre</label>
+            </div>
+            <button type="submit" class="btn btn-success">Entrar</button>
+            <button type="button" class="btn btn-primary" onclick="Javascript: window.location.href='/Usuario/Registrar'">Registrar</button>
+        </form>
+
+
+</body>
+</div>

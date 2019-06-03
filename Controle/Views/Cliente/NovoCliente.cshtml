@@ -1,0 +1,50 @@
+﻿@model ClienteModel
+@{
+    ViewData["Title"] = "NovoCliente";
+}
+
+<h3>NovoCliente</h3>
+
+<form asp-controller="Cliente" asp-action="NovoCliente">
+    <div class="form-group">
+        <label>Nome completo</label>
+        <input type="text" class="form-control" asp-for="Nome" placeholder="Nome Completo Cliente">
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>CPF</label>
+        <input type="number" class="form-control" asp-for="Cpf" placeholder="CPF">
+        <span asp-validation-for="Cpf" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Endereço ( Rua / Bairro/ Numero)</label>
+        <input type="text" class="form-control" asp-for="RuaBairroNumero">
+        <span asp-validation-for="RuaBairroNumero" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Cidade</label>
+        <input type="text" class="form-control" asp-for="Cidade" placeholder="Fortaleza">
+        <span asp-validation-for="Cidade" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Responsavel</label>
+        <input type="text" class="form-control" asp-for="Responsavel">
+        <span asp-validation-for="Responsavel" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Telefone</label>
+        <input type="text" class="form-control" asp-for="Telefone">
+        <span asp-validation-for="Telefone" class="text-danger"></span>
+    </div>
+
+  
+
+
+    <button type="submit" class="btn btn-block btn-success">Registrar</button>
+
+</form>

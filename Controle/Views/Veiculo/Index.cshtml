@@ -1,0 +1,78 @@
+﻿
+@model VeiculoModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Novo veúculo</h3>
+
+
+<table class="table table-bordered">
+    <thead>
+    <th>#</th>
+    
+    <th>MARCA</th>
+    <th>PLACA</th>
+    <th>ANOFABRICA</th>
+    <th>ANOMODELO</th>
+    <th>POTENCIA</th>
+    <th>CAPACIDADE</th>
+    <th>COR</th>
+    <th>ESPECIE</th>
+    <th>COMBUSTIVEL</th>
+    <th>CHASSI</th>
+    <th>CPF Cliente</th>
+
+
+    </thead>
+    @{ foreach (var item in (List<VeiculoModel>)ViewBag.ListaVeiculo)
+        {
+            <tbody>
+                    <tr>
+
+                        <td><button type="button" class="btn btn-danger" onclick="Excluir(@item.Idveiculo.ToString())">Excluir</button></td>
+                        
+                        <td>@item.Marca.ToString()</td>
+                        <td>@item.Placa.ToString()</td>
+                        <td>@item.Anofabrica.ToString()</td>
+                        <td>@item.Anomodelo.ToString()</td>
+
+                        <td>@item.Potencia.ToString()</td>
+                        <td>@item.Capacidade.ToString()</td>
+                        <td>@item.Cor.ToString()</td>
+                        <td>@item.Especie.ToString()</td>
+                        <td>@item.Combustivel.ToString()</td>
+                        <td>@item.Chassi.ToString()</td>
+                        
+                        <td>@item.CpfCliente.ToString()</td>
+
+
+
+                    </tr>
+            </tbody>
+        }
+
+
+    }
+
+
+</table>
+
+<button type="button" class="btn btn-block btn-primary" onclick="CadastrarVeiculo()">Cadastrar um novo veiculo</button>
+
+<script>
+    function CadastrarVeiculo()
+    {
+        window.location.href = "../veiculo/novoVeiculo";
+
+    }
+
+  
+</script>
+<script>
+      function Excluir(IdVeiculo)
+    {
+        window.location.href = "../veiculo/ExcluirVeiculo/" + IdVeiculo;
+    }
+
+</script>

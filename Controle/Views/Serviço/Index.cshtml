@@ -1,0 +1,78 @@
+﻿@model ServiçoModel
+    
+
+
+<h2>Cadastrar Serviço</h2>
+
+<table class="table table-bordered">
+    <thead>
+    <th>#</th>
+    <th>#</th>
+
+    <th>TIPO</th>
+    <th>CUSTO</th>
+    <th>ESTOQUE</th>
+    <th>DATAE DE NTRADA</th>
+    <th>RÉSPONSAVEL SERVIÇO</th>
+    <th>OBSERVAÇÕES</th>
+
+    <th>CPF CLIENTE</th>
+    <th>PLACA VEICULO</th>
+
+
+
+    </thead>
+    @{ foreach (var item in (List<ServiçoModel>)ViewBag.ListaServiço)
+        {
+            <tbody>
+                    <tr>
+
+                        <td><button type="button" class="btn btn-danger" onclick="Excluir(@item.IdS.ToString())">Excluir</button></td>
+                       
+
+                        <td>@item.Tipo.ToString()</td>
+                        <td>@item.Custo.ToString()</td>
+                        <td>@item.Estoque.ToString()</td>
+                        <td>@item.Dataentrada.ToString()</td>
+                        <td>@item.DataSaida.ToString()</td>
+                        <td>@item.Obs.ToString()</td>
+
+                        <td>@item.CpfCli.ToString()</td>
+                        <td>@item.Placa.ToString()</td>
+
+
+
+
+                    </tr>
+            </tbody>
+        }
+
+
+    }
+
+
+</table>
+
+<button type="button" class="btn btn-block btn-primary" onclick="CadastrarServiço()">Cadastrar um novo Serviço</button>
+
+<script>
+    function CadastrarServiço() {
+        window.location.href = "../serviço/novoServiço";
+
+    }
+
+
+</script>
+<script>
+    function Excluir(IdS) {
+        window.location.href = "../Serviço/ExcluirServiço/" + IdS;
+    }
+
+  
+
+</script>
+<script>
+      function Editar(IdS) {
+        window.location.href = "../Serviço/NovoServiço/" + IdS;
+    }
+</script>

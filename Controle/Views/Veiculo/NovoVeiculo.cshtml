@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "NovoVeiculo";
+}
+
+<h2>NovoVeiculo</h2>
+
+
+@model VeiculoModel
+@{
+    ViewData["Title"] = "NovoCliente";
+}
+
+<h3>NovoCliente</h3>
+
+<form asp-controller="Veiculo" asp-action="NovoVeiculo">
+    <div class="form-group">
+        <label>Marca</label>
+        <input type="text" class="form-control" asp-for="Marca">
+        <span asp-validation-for="Marca" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Placa</label>
+        <input type="text" class="form-control" asp-for="Placa">
+        <span asp-validation-for="Placa" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Ano fABRICAÇÃO ( Rua/ Bairro/ Numero)</label>
+        <input type="text" class="form-control" asp-for="Anofabrica">
+        <span asp-validation-for="Anofabrica" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Ano modelo</label>
+        <input type="text" class="form-control" asp-for="Anomodelo">
+        <span asp-validation-for="Anomodelo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Potencia</label>
+        <input type="text" class="form-control" asp-for="Potencia">
+        <span asp-validation-for="Potencia" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Capacidade</label>
+        <input type="text" class="form-control" asp-for="Capacidade">
+        <span asp-validation-for="Capacidade" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Cor</label>
+        <input type="text" class="form-control" asp-for="Cor">
+        <span asp-validation-for="Cor" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label>Especie</label>
+        <input type="text" class="form-control" asp-for="Especie">
+        <span asp-validation-for="Especie" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label>Combustivel</label>
+        <input type="text" class="form-control" asp-for="Combustivel">
+        <span asp-validation-for="Combustivel" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Chassi</label>
+        <input type="text" class="form-control" asp-for="Chassi">
+        <span asp-validation-for="Chassi" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>CPF Cliente</label>
+        <input type="text" class="form-control" asp-for="CpfCliente">
+        <span asp-validation-for="CpfCliente" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-block btn-success">Registrar</button>
+
+</form>
+

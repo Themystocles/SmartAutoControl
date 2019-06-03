@@ -1,0 +1,94 @@
+﻿@model ServiçoModel
+@{
+    ViewData["Title"] = "NovoServiço";
+}
+
+<h2>NovoServiço</h2>
+
+@{ 
+
+    var vTipo = "";
+    var vCusto = "";
+    var vEstoque = "";
+    var vDATTAENTRADA = "";
+    var vDATASAIDA = "";
+    var vOBS = "";
+    var vCpfCli = "";
+    var vPlaca = "";
+    try
+        {
+
+        vTipo = @ViewBag.registro.tipo.ToString();
+        vEstoque = @ViewBag.registro.Custo.ToString();
+        vDATTAENTRADA = @ViewBag.registro.Estoque.ToString();
+        vDATASAIDA = @ViewBag.registro.DattaEntrada.ToString();
+        vOBS = @ViewBag.registro.DataSaida.ToString();
+        vCpfCli = @ViewBag.registro.OBS.ToString();
+        vPlaca = @ViewBag.registro.Placa.ToString();
+    }
+    catch{ }
+
+}
+
+
+
+
+
+
+
+
+
+<form asp-controller="Serviço" asp-action="Novoserviço">
+    <div class="form-group">
+        <label>Tipo</label>
+        <input type="text" class="form-control" asp-for="Tipo" value="@vTipo">
+        <span asp-validation-for="Tipo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Custo</label>
+        <input type="text" class="form-control" asp-for="Custo"  value="@vCusto" >
+        <span asp-validation-for="Custo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>PEÇA</label>
+        <input type="text" class="form-control" asp-for="Estoque"  value="@vEstoque">
+        <span asp-validation-for="Estoque" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>DATA ENTRADA</label>
+        <input type="text" class="form-control" asp-for="Dataentrada" value="@vDATTAENTRADA">
+        <span asp-validation-for="Dataentrada" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>RESPONSÁVEL PELO SERVIÇO</label>
+        <input type="text" class="form-control" asp-for="DataSaida" value="@vDATASAIDA">
+        <span asp-validation-for="DataSaida" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>OBSERVAÇOES LIVRE</label>
+        <input type="text" class="form-control" asp-for="Obs" value="@vOBS">
+        <span asp-validation-for="Obs" class="text-danger"></span>
+    </div>
+
+
+
+    <div class="form-group">
+        <label>CPF CLI</label>
+        <input type="text" class="form-control" asp-for="CpfCli">
+        <span asp-validation-for="CpfCli" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Placa Veículo</label>
+        <input type="text" class="form-control" asp-for="Placa">
+        <span asp-validation-for="Placa" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-block btn-success">Registrar</button>
+
+</form>

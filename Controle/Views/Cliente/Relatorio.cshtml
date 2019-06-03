@@ -1,0 +1,172 @@
+﻿@model RelatorioModel
+@{
+    ViewData["Title"] = "Relatorio";
+}
+
+<h2>Relatório</h2>
+
+
+
+
+
+@{ foreach (var item in (List<RelatorioModel>)ViewBag.ListaRelatorio)
+    {
+    <center>
+        <tbody>
+
+
+            <table class="table table-bordered">
+                <div style="background-color:darkgrey">
+
+                    <h5><b>Dados Cliente</b></h5>
+
+
+                    <th>Nome:</th>
+
+                    <td>@item.Nome.ToString()</td>
+
+                    <th>CPF:</th>
+                    <td>@item.Cpf.ToString()</td>
+
+                    <th>Telefone:</th>
+                    <td>@item.Telefone.ToString()</td>
+                </div>
+            </table>
+            <table class="table table-bordered">
+                <div style="background-color:darkgrey">
+                    <h5><b>Endereço</b></h5>
+
+                    <th>Rua / Bairro / Número:</th>
+                    <td>@item.RuaBairroNumero.ToString()</td>
+                    <th>Cidade:</th>
+                    <td>@item.Cidade.ToString()</td>
+                    <th>Responsável:</th>
+                    <td>@item.Responsavel.ToString()</td>
+                </div>
+            </table>
+
+            <table class="table table-bordered">
+                <div style="background-color:darkgrey">
+                    <h5><b>Dados do veículo:</b></h5>
+
+
+
+                    <th>Placa:</th>
+                    <td>@item.Placa.ToString()</td>
+                    <th>Ano de fabricação:</th>
+                    <td>@item.Anofabrica.ToString()</td>
+                    <th>Ano Modelo:</th>
+                    <td>@item.Anomodelo.ToString()</td>
+                    <th>Potência:</th>
+                    <td>@item.Potencia.ToString()</td>
+                </div>
+            </table>
+
+            <table class="table table-bordered">
+
+
+
+                <th>Capacidade:</th>
+                <td>@item.Capacidade.ToString()</td>
+                <th>Cor:</th>
+
+
+                <td>@item.Cor.ToString()</td>
+                <th> Combustível:</th>
+                <td>@item.Combustivel.ToString()</td>
+                <th>Chassi:</th>
+                <td>@item.Chassi.ToString()</td>
+
+            </table>
+            <table class="table table-bordered">
+
+                <th>Marca:</th>
+                <td>@item.Marca.ToString()</td>
+
+                <th>Especie:</th>
+                <td>@item.Especie.ToString()</td>
+
+
+            </table>
+
+
+            <table class="table table-bordered">
+                <div style="background-color:darkgrey">
+                    <h5><b>Serviço:</b></h5>
+
+
+                    <th>Custo:</th>
+                    <td>@item.Custo.ToString()</td>
+
+                    <th>Peça:</th>
+                    <td>@item.Estoque.ToString()</td>
+                </div>
+
+
+
+
+
+                <th>Data entrada:</th>
+                <td>@item.Dataentrada.ToString()</td>
+                <th>Responsável serviço:</th>
+                <td>@item.DataSaida.ToString()</td>
+            </table>
+            <table class="table table-bordered">
+
+                <th>Tipo de serviço:</th>
+                <td>@item.Tipo.ToString()</td>
+            </table>
+
+            <table class="table table-bordered">
+
+                <th>Observações:</th>
+
+
+
+
+
+                <td>@item.Obs.ToString()</td>
+
+
+
+            </table>
+
+          
+
+            <b>Assinatura : __________________________________________</b>
+           
+
+
+        </tbody>
+    </center>
+    }
+
+
+}
+
+
+</table>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<form asp-controller="Cliente" asp-action="Relatorio">
+    <div class="form-group">
+        <label>Informe o CPF</label>
+        <input type="text" asp-for="Cpf" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Informe o PLACA</label>
+        <input type="text" asp-for="placa" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-block btn-success" onclick="">Pesquisar</button>
+</form>
+
+
+<form>
+    <input type="button" value="Print this page" onClick="window.print()" />
+</form>

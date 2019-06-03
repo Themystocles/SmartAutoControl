@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Cadastrar Cliente</h3>
+
+
+<table class="table table-bordered" >
+    <thead>
+        <th>#</th>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>CPF</th>
+        <th>ENDEREÇO</th>
+        <th>CIDADE</th>
+        <th>RESPONSAVEL</th>
+        <th>TELEFONE</th>
+        
+    </thead>
+    @{ foreach (var item in (List<ClienteModel>)ViewBag.ListaCliente)
+        {
+            <tbody>
+                    <tr>
+                        <td><button type="button" class="btn btn-danger" onclick="Excluir(@item.IdCliente.ToString())">EXCLUIR</button></td>
+                        <td>@item.IdCliente.ToString()</td>
+                        <td>@item.Nome.ToString()</td>
+                        <td>@item.Cpf.ToString()</td>
+                        <td>@item.RuaBairroNumero.ToString()</td>
+                        <td>@item.Cidade.ToString()</td>
+                        <td>@item.Responsavel.ToString()</td>
+                        <td>@item.Telefone.ToString()</td>
+                        
+                    </tr>
+            </tbody>
+        }
+
+
+                }
+
+
+</table>
+
+<button type="button" class="btn btn-block btn-primary" onclick="CadastrarCliente()">Cadastrar um novo cliente</button>
+
+<script>
+    function CadastrarCliente()
+    {
+        window.location.href = "../Cliente/NovoCliente";
+
+        }
+    function Excluir(idCliente)
+    {
+        window.location.href = "../Cliente/ExcluirCliente/" + idCliente;
+    }
+
+</script>

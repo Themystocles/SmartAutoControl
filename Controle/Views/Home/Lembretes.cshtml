@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <div>
+
+
+        <table class="table table-bordered">
+            <thead>
+                <center><h3><b>Meus Lembretes</b></h3></center>
+                <br />
+                <br />
+
+
+            </thead>
+            @{ foreach (var item in (List<LembretesModel>)ViewBag.ListaLembretes)
+                {
+                    <tbody>
+                        <tr>
+                            <td><button type="button" class="btn btn-danger" onclick="Excluir(@item.IdLembrete.ToString())">EXCLUIR</button></td>
+
+                            <td>@item.Lembretes.ToString()</td>
+
+
+                        </tr>
+                    </tbody>
+                }
+
+
+            }
+
+
+        </table>
+
+
+        <script>
+
+
+
+            function Excluir(IdLembrete) {
+                window.location.href = "../Home/ExcluirLembrete/" + IdLembrete;
+
+            }
+        </script>
+
+        @model LembretesModel
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <form asp-controller="Home" asp-action="NovoLembrete">
+            <div class="form-group">
+                <label>Escreva seu lembrete</label>
+                <input type="text" class="form-control" asp-for="Lembretes">
+                <span asp-validation-for="Lembretes" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-block btn-success">Registrar</button>
+
+        </form>
+
+   
+
+    </div>
