@@ -65,6 +65,8 @@ namespace Controle.Models
         public void Insert()
         {
             string id_usuario_logado = @HttpContextAccessor.HttpContext.Session.GetString("IdUsuarioLogado");
+
+            
             
             string sql = $"INSERT INTO CLIENTE (NOME, CPF, RUABAIRRONUMERO, CIDADE, RESPONSAVEL, TELEFONE, USUARIO_IDUSUARIO) VALUES ('{Nome}','{Cpf}','{RuaBairroNumero}',default ,'{Responsavel}','{Telefone}','{id_usuario_logado}') ";
             DAL objDal = new DAL();

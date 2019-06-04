@@ -71,8 +71,14 @@
 </script>
 <script>
       function Excluir(IdVeiculo)
-    {
-        window.location.href = "../veiculo/ExcluirVeiculo/" + IdVeiculo;
+      {
+               decisao = confirm("  Deseja mesmo exluir esse registro?");
+
+          if (decisao) {
+              window.location.href = "../veiculo/ExcluirVeiculo/" + IdVeiculo;
+          }
+          else { }
+
     }
 
 </script>

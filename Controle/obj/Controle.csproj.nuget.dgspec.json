@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pcgamer\\Desktop\\Finalizando\\Controle\\Controle\\Controle.csproj": {}
+    "C:\\Users\\pcgamer\\Desktop\\Finalizado\\Controle\\Controle\\Controle.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pcgamer\\Desktop\\Finalizando\\Controle\\Controle\\Controle.csproj": {
+    "C:\\Users\\pcgamer\\Desktop\\Finalizado\\Controle\\Controle\\Controle.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pcgamer\\Desktop\\Finalizando\\Controle\\Controle\\Controle.csproj",
+        "projectUniqueName": "C:\\Users\\pcgamer\\Desktop\\Finalizado\\Controle\\Controle\\Controle.csproj",
         "projectName": "Controle",
-        "projectPath": "C:\\Users\\pcgamer\\Desktop\\Finalizando\\Controle\\Controle\\Controle.csproj",
+        "projectPath": "C:\\Users\\pcgamer\\Desktop\\Finalizado\\Controle\\Controle\\Controle.csproj",
         "packagesPath": "C:\\Users\\pcgamer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pcgamer\\Desktop\\Finalizando\\Controle\\Controle\\obj\\",
+        "outputPath": "C:\\Users\\pcgamer\\Desktop\\Finalizado\\Controle\\Controle\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

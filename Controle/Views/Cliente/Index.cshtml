@@ -46,12 +46,20 @@
 <script>
     function CadastrarCliente()
     {
-        window.location.href = "../Cliente/NovoCliente";
+        
 
+        window.location.href = "../Cliente/NovoCliente";
+        
         }
     function Excluir(idCliente)
     {
-        window.location.href = "../Cliente/ExcluirCliente/" + idCliente;
+        decisao = confirm( "  Deseja mesmo exluir esse registro?");
+
+        if (decisao) {
+
+            window.location.href = "../Cliente/ExcluirCliente/" + idCliente;
+        }
+        else {}
     }
 
 </script>
